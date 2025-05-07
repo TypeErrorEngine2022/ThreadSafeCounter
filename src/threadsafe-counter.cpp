@@ -1,17 +1,16 @@
-#include "threadsafe-counter-sub.h"
+#include "headers/threadsafe-counter.h"
 
-void work_func(ThreadSafeCounterWithSubCounter& counter)
+void work_func(ThreadSafeCounter& counter)
 {
-	auto it = counter.register_counter();
 	for(int i = 0; i < 1000; ++i)
 	{
-		counter.increment(it);
+		counter.increment();
 	}
 }
 
 int main()
 {
-	ThreadSafeCounterWithSubCounter counter;
+	ThreadSafeCounter counter;
 	std::vector<std::thread> threads;
 	for(int i = 0; i < 4; ++i)
 	{

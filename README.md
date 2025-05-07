@@ -16,15 +16,15 @@ This repository implmented 2 versions of thread-safe counter
 ## Benchmark
 Run the benchmark using the following command:
 ```bash
-g++ --std=c++20 --pedantic counter-benchmark.cpp -o benchmark.out
+g++ --std=c++20 --pedantic ./src/counter-benchmark.cpp -o benchmark.out
 ./benchmark.out
 ```
 
 ## Benchmark Output
 When the number of thread is higher, the speedup of `ThreadSafeCounterWithSubCounter` is more significant than `ThreadSafeCounter`.
 
-![speedup](./speedup-ratio.png)
-![threadcount-vs-time](./threadcount-vs-time.png)
+![speedup](./assets/speedup-ratio.png)
+![threadcount-vs-time](./assets/threadcount-vs-time.png)
 
 ```
 ============================================

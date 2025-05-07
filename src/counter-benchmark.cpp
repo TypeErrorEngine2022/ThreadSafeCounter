@@ -1,5 +1,5 @@
-#include "threadsafe-counter-sub.h"
-#include "threadsafe-counter.h"
+#include "headers/threadsafe-counter-sub.h"
+#include "headers/threadsafe-counter.h"
 #include <algorithm>
 #include <chrono>
 #include <functional>
