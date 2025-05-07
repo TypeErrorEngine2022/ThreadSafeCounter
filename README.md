@@ -1,6 +1,7 @@
 # ThreadSafeCounter
 
-This repository implmented 2 versions of thread-safe counter
+This repository implmented 3 versions of thread-safe counter
+- NonThreadSafeCounter
 - ThreadSafeCounter
 - ThreadSafeCounterWithSubCounter
 
@@ -8,19 +9,22 @@ This repository implmented 2 versions of thread-safe counter
 - `register_counter()`: Registers a new sub-counter.
 
 ## Common Public Methods
-`ThreadSafeCounter` and `ThreadSafeCounterWithSubCounter` both implement the following public methods:
+All implementations have following public methods:
 - `increment()`: Increments the counter by 1.
   - for `ThreadSafeCounterWithSubCounter`, the thread must register a sub-counter before calling this method.
 - `get_count()`: Returns the total current count.
 
-## Benchmark
+## NonThreadSafeCounter
+Since this is not thread-safe, it will have data race upon usage, which yields incorrect count. So, no benchmark is provided for this version.
+
+## Benchmark for the thread-safe versions
 Run the benchmark using the following command:
 ```bash
 g++ --std=c++20 --pedantic ./src/counter-benchmark.cpp -o benchmark.out
 ./benchmark.out
 ```
 
-## Benchmark Output
+## Benchmark Output for the thread-safe versions
 When the number of thread is higher, the speedup of `ThreadSafeCounterWithSubCounter` is more significant than `ThreadSafeCounter`.
 
 ![speedup](./assets/speedup-ratio.png)
