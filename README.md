@@ -23,6 +23,9 @@ g++ --std=c++20 --pedantic counter-benchmark.cpp -o benchmark.out
 ## Benchmark Output
 When the number of thread is higher, the speedup of `ThreadSafeCounterWithSubCounter` is more significant than `ThreadSafeCounter`.
 
+![speedup](./speedup-ratio.png)
+![threadcount-vs-time](./threadcount-vs-time.png)
+
 ```
 ============================================
 Counter Performance Benchmark
