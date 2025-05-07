@@ -1,5 +1,7 @@
 # ThreadSafeCounter
 
+Detailed blog for this repository is on [HackMD](https://hackmd.io/@JackyDev/r1BhCytleg!)!
+
 This repository implmented 3 versions of thread-safe counter
 - NonThreadSafeCounter
 - ThreadSafeCounter
