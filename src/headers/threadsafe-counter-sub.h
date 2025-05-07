@@ -67,8 +67,6 @@ public:
 		auto sum_sub_count = [](long long running_sum, const SubCounter& sub_counter) {
 			return running_sum + sub_counter.get_count();
 		};
-		// actually, this accumulate will lock the mutex of each sub_counter one by one, but not lock all of them simultaneously
-		// so if anyone calls increment() while we are accumulating, the result will be inconsistent
 		long long sum = std::accumulate(sub_count_.begin(), sub_count_.end(), 0LL, sum_sub_count);
 		return sum;
 	}
